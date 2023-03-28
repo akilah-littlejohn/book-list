@@ -8,7 +8,6 @@ import { TableComponent } from './table/table.component';
 export const routes: Route[] = [
   {
     path: 'table',
-    pathMatch: 'full',
     loadComponent: () =>
       import('./table/table.component').then((x) => x.TableComponent),
   },
@@ -19,19 +18,22 @@ export const routes: Route[] = [
         (x) => x.BookInfoCardComponent
       ),
   },
+  {
+    path: '',
+    redirectTo: 'table',
+    pathMatch: 'full',
+  },
 ];
 @Component({
   selector: 'my-app',
   standalone: true,
   imports: [CommonModule, RouterModule, TableComponent],
   template: `
-  <app-table><app-table>
   <router-outlet></router-outlet>
 
   `,
 })
-export class App {
-}
+export class App {}
 
 bootstrapApplication(App, {
   providers: [provideRouter(routes)],
