@@ -33,4 +33,6 @@ export class App {
   name = 'Angular';
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App, {
+  providers: [provideRouter(routes)],
+});
