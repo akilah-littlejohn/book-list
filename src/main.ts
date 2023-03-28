@@ -26,6 +26,7 @@ export const routes: Route[] = [
   imports: [CommonModule, RouterModule, TableComponent],
   template: `
   <app-table><app-table>
+  <router-outlet></router-outlet>
 
   `,
 })
