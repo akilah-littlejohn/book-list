@@ -30,7 +30,6 @@ export const routes: Route[] = [
   `,
 })
 export class App {
-  name = 'Angular';
 }
 
 bootstrapApplication(App, {
